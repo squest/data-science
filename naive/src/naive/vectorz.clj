@@ -26,7 +26,7 @@
   (mapv * (repeat k) v))
 
 (defn project
-  "Return the orthogonal projection of vector a in b. When given three
+  "Returns the orthogonal projection of vector a in b. When given three
   arguments, it will return the vector version"
   ([a b]
      (/ (dot a b) (abs b)))

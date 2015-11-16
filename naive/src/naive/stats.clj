@@ -22,3 +22,14 @@
      (->> (for [k m-keys]
             (frequencies (map k col)))
           (zipmap m-keys))))
+
+(defn mode
+  "Return the mode(s) of a data set. Given two arguments, it returns
+  the mode for each supplied key."
+  ([col]
+     (->> (frequencies col)
+          (max-key val)))
+  ([col m-keys]
+     (->> (for [k m-keys]
+            (mode (map #(% k) col)))
+          (zipmap m-keys))))
