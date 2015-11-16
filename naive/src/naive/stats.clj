@@ -14,7 +14,7 @@
             (merge-with / (reduce #(merge-with + % %2) res))))))
 
 (defn freq
-  "Given one argument, behave exactly like clojure's frequencies.
+  "Given one argument, behaves exactly like clojure's frequencies.
   Given two arguments, it returns frequencies of each supplied key"
   ([col]
      (frequencies col))
@@ -28,8 +28,10 @@
   the mode for each supplied key."
   ([col]
      (->> (frequencies col)
-          (max-key val)))
+          (apply max-key val)))
   ([col m-keys]
      (->> (for [k m-keys]
             (mode (map #(% k) col)))
           (zipmap m-keys))))
+
+
