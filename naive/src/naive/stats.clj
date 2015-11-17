@@ -34,4 +34,24 @@
             (mode (map #(% k) col)))
           (zipmap m-keys))))
 
+(defn tile
+  "Returns the n-tile of a data. Given three arguments, it returns the
+  vector of n-tile for each of the supplied key."
+  ([col n]
+     (let [ctr (count col)
+           nths (map #(* % (quot ctr n)) (range 1 n))
+           sorted (sort col)]
+       (mapv #(nth sorted %) nths)))
+  ([col m-keys n]
+     (let [ctr (count col)
+           nths (map #(* % (quot ctr n)) (range 1 n))]
+       (->> (for [k m-keys]
+              (let [sorted (sort (map #(% k) col))]
+                {k (mapv #(nth sorted %) nths)}))
+            (reduce merge)))))
+
+
+
+
+
 
