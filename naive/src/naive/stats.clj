@@ -13,6 +13,33 @@
        (->> (zipmap m-keys (repeat freq))
             (merge-with / (reduce #(merge-with + % %2) res))))))
 
+(defn std-dev
+  "Given one argument, returns the standard deviation of the data in
+  collection. Given two arguments, return the standard deviation for
+  every supplied keys"
+  ([col]
+     (let [mean (means col)]
+       (->> (map #(let [a (- % mean)] (* a a)) col)
+            (reduce +)
+            (#(/ % (- (count col) 1)))
+            (Math/sqrt))))
+  ([m-keys col]
+     (->> (for [k m-keys] (std-dev (map #(k %) col)))
+          (zipmap m-keys))))
+
+(defn avg-dev
+  "Given one argument, returns the average deviation of the data in
+  collection. Given two arguments, return the average deviation for
+  every supplied keys"
+  ([col]
+     (let [mean (means col)]
+       (->> (map #(let [a (- % mean)] (Math/abs a)) col)
+            (reduce +)
+            (#(/ % (count col))))))
+  ([m-keys col]
+     (->> (for [k m-keys] (avg-dev (map #(k %) col)))
+          (zipmap m-keys))))
+
 (defn freq
   "Given one argument, behaves exactly like clojure's frequencies.
   Given two arguments, it returns frequencies of each supplied key"

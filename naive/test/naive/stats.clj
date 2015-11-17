@@ -3,6 +3,8 @@
    [naive.stats :refer :all]
    [clojure.test :refer :all]))
 
+(defn f= [x a] (< (- x 1) a (+ x 1)))
+
 (deftest testing-stats
   (let [single (for [i (range 1000)] (rand-int 50))
         multi (for [i (range 100)
@@ -80,7 +82,26 @@
              (->> (map #(hash-map :a % :b %2)
                        (range 1 11)
                        (range 0 41 4))
-                  (tile 4 [:a :b])))))))
+                  (tile 4 [:a :b])))))
+
+    ;; Testing standard deviation
+    (testing "Standard deviation for single and multiple"
+      (is (= true (float? (std-dev (range 20)))))
+      (is (= true (let [sd (std-dev (repeat 100 10))]
+                    (f= sd 0))))
+      (is (f= (->> (range 1 51)
+                   (map #(* % %))
+                   (reduce +)
+                   (#(/ % 49))
+                   (Math/sqrt))
+              (std-dev (range 1 100)))))
+
+    ;; Testing average deviation
+    (testing "Average deviations for single and multiple"
+      (is (= true (float? (avg-dev (range 100)))))
+      (is (== 25 (avg-dev (range 100))))
+      (is (f= 25 (avg-dev (range 100)))))))
+
 
 
 
