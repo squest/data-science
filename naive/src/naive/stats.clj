@@ -7,7 +7,7 @@
   numeric values"
   ([col]
      (/ (reduce + col) (float (count col))))
-  ([col m-keys]
+  ([m-keys col]
      (let [res (map #(select-keys % m-keys) col)
            freq (float (count res))]
        (->> (zipmap m-keys (repeat freq))
@@ -18,7 +18,7 @@
   Given two arguments, it returns frequencies of each supplied key"
   ([col]
      (frequencies col))
-  ([col m-keys]
+  ([m-keys col]
      (->> (for [k m-keys]
             (frequencies (map k col)))
           (zipmap m-keys))))
@@ -29,7 +29,7 @@
   ([col]
      (->> (frequencies col)
           (apply max-key val)))
-  ([col m-keys]
+  ([m-keys col]
      (->> (for [k m-keys]
             (mode (map #(% k) col)))
           (zipmap m-keys))))
@@ -37,12 +37,12 @@
 (defn tile
   "Returns the n-tile of a data. Given three arguments, it returns the
   vector of n-tile for each of the supplied key."
-  ([col n]
+  ([n col]
      (let [ctr (count col)
            nths (map #(* % (quot ctr n)) (range 1 n))
            sorted (sort col)]
        (mapv #(nth sorted %) nths)))
-  ([col m-keys n]
+  ([n m-keys col]
      (let [ctr (count col)
            nths (map #(* % (quot ctr n)) (range 1 n))]
        (->> (for [k m-keys]
