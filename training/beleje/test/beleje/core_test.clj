@@ -106,3 +106,38 @@
     (is (= {:iq {:<=100 2 :101-130 3 :>131 3}
             :eq {:<=100 4 :101-130 1 :>131 3}}
            (freq-by eq-iq-group [:iq :eq] data3)))))
+
+(deftest median-test
+  (testing "median with input 1 & 2"
+    (is (= 10 (median (repeat 20 10))))
+    (is (= 3 (median data1)))
+    (is (= 5.6 (median data2))))
+  (testing "median with input 3"
+    (is (= {:iq (/ (+ 120 130) 2)}
+           (median [:iq] data3)))
+    (is (= {:eq (/ (+ 100 130) 2)}
+           (median [:eq] data3)))))
+
+(deftest quartile-test
+  (testing "quartile with input 1 & 2"
+    (is (= {:q1 10.0 :q2 10.0 :q3 10.0}
+           (quartile (repeat 20 10))))
+    (is (= {:q1 1.0 :q2 3.0 :q3 6.0}
+           (quartile data1)))
+    (is (= {:q1 (/ (+ 2.1 3.2) 2.0) :q2 5.6 :q3 (/ (+ 7 8) 2.0)}
+           (quartile data2))))
+  (testing "quartile with input 3"
+    (is (= {:iq {:q1 102.5 :q2 125.0 :q3 165.0}}
+           (quartile [:iq] data3)))
+    (is (= {:eq {:q1 90.0 :q2 115.0 :q3 147.5}}
+           (quartile [:eq] data3)))
+    (is (= {:iq {:q1 102.5 :q2 125.0 :q3 165.0}
+            :eq {:q1 90.0 :q2 115.0 :q3 147.5}}
+           (quartile [:iq :eq] data3)))))
+
+(deftest decile-test
+  (testing "decile with list of numbers inputs"
+    (is (= {:d1 430.0, :d2 530.0, :d3 595.0, :d4 630.0, :d5 687.5, :d6 745.0, :d7 800.0, :d8 820.0, :d9 902.5000000000001}
+           (decile [500 850 925 800 600 750 650 625 800 400 725 550])))
+    (is (= {:d1 4.0 :d2 6.0 :d3 8.5 :d4 10.5 :d5 11.5 :d6 13.5 :d7 17.5 :d8 25.0 :d9 32.0}
+           (decile [110 301 501 701 991 201 301 101 111 121 341 151])))))

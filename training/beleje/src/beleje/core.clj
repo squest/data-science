@@ -82,9 +82,27 @@
     (f dakeys damaps)))
 
 (defn quartile
+  ([danums]
+   (let [total (count danums)
+         data (vec (sort danums))
+         observation-nth (mapv * (range 1 4) (repeat 3 (/ (inc total) 4.0)))
+         calc-quartile-nth (fn [th] (+ (data (dec (int th)))
+                                       (* (- th (int th)) (- (data (int th)) (data (dec (int th)))))))]
+     (zipmap [:q1 :q2 :q3]
+             (map calc-quartile-nth observation-nth))))
+  ([dakeys damaps]
+    (mapping-data quartile dakeys damaps)))
+
+(defn decile
+  "it still assumes total data >= 10"
   [danums]
-  (let [data (vec (sort danums))
-        total (count data)]))
+  (let [total (count danums)
+        data (vec (sort danums))
+        observation-nth (mapv * (range 1 10) (repeat 9 (/ (inc total) 10.0)))
+        calc-decile-nth (fn [th] (+ (data (dec (int th)))
+                                    (* (- th (int th)) (- (data (int th)) (data (dec (int th)))))))]
+    (zipmap [:d1 :d2 :d3 :d4 :d5 :d6 :d7 :d8 :d9]
+            (map calc-decile-nth observation-nth))))
 
 
 
