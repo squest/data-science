@@ -1,8 +1,126 @@
 (ns beleje.core)
 
-(defn foo
-  "I don't do a whole lot."
-  [x]
-  (println x "Hello, World!"))
+(def data4
+  [{:name "Jon Snow" :iq 100 :eq 160 :status "deceased"}
+   {:name "Tyrion Lannister" :iq 150 :eq 130 :status "missing"}
+   {:name "Daenarys Targaryen" :iq 130 :eq 100 :status "alive"}
+   {:name "Sansa Stark" :iq 90 :eq 90 :status "missing"}
+   {:name "Petyr Baelish" :iq 180 :eq 70 :status "alive"}
+   {:name "Varys" :iq 170 :eq 150 :status "missing"}
+   {:name "Ned Stark" :iq 120 :eq 140 :status "deceased"}
+   {:name "Cersei Lannister" :iq 110 :eq 90 :status "alive"}])
 
-;hahaha
+;; helper functions
+
+(defn mapping-data
+  [f dakeys damaps]
+  (let [a (fn [key] {key (f (mapv #(% key) damaps))})]
+    (apply merge (map a dakeys))))
+
+(defn nilai
+  [danums]
+  {:0-4  (count (filter #(<= (int %) 4) danums))
+   :5-7  (count (filter #(<= 5 (int %) 7) danums))
+   :8-10 (count (filter #(<= 8 (int %) 10) danums))})
+
+(defn eq-iq-group
+  ([danums]
+   {:<=100   (count (filter #(<= % 100) danums))
+    :101-130 (count (filter #(<= 101 % 130) danums))
+    :>131    (count (filter #(>= % 131) danums))})
+  ([dakeys damaps]
+    (mapping-data eq-iq-group dakeys damaps)))
+
+(defn survivor-count
+  ([dastatuses]
+   {:survivor (count (filter #(or (= % "missing") (= % "alive")) dastatuses))
+    :stupid   (count (filter #(= % "deceased") dastatuses))})
+  ([dakeys damaps]
+    (mapping-data survivor-count dakeys damaps)))
+
+
+;; main functions
+
+
+(defn means
+  ([danums]
+   (/ (apply +' danums) (count danums)))
+  ([dakeys damaps]
+    (mapping-data means dakeys damaps)))
+
+(defn mode
+  ([danums]
+   (let [data (frequencies danums)
+         max-frequency (apply max (vals data))]
+     (filterv #(if (= (data %) max-frequency) %) (keys data))))
+  ([dakeys damaps]
+    (mapping-data mode dakeys damaps)))
+
+(defn variance
+  ([danums]
+   (let [sqr (fn [x] (* x x))]
+     (apply +' (map #(sqr (- %1 %2)) danums (repeat (means danums))))))
+  ([dakeys damaps]
+    (mapping-data variance dakeys damaps)))
+
+(defn std
+  ([danums]
+   (Math/sqrt (variance danums)))
+  ([dakeys damaps]
+    (mapping-data std dakeys damaps)))
+
+(defn freq
+  ([danums]
+   (frequencies danums))
+  ([dakeys damaps]
+    (mapping-data freq dakeys damaps)))
+
+(defn freq-by
+  ([f datas]
+   (f datas))
+  ([f dakeys damaps]
+    (f dakeys damaps)))
+
+(defn quartile
+  ([danums]
+   (let [total (count danums)
+         data (vec (sort danums))
+         observation-nth (mapv * (range 1 4) (repeat 3 (/ (inc total) 4.0)))
+         calc-quartile-nth (fn [th] (+ (data (dec (int th)))
+                                       (* (- th (int th)) (- (data (int th)) (data (dec (int th)))))))]
+     (zipmap [:q1 :q2 :q3]
+             (map calc-quartile-nth observation-nth))))
+  ([dakeys damaps]
+    (mapping-data quartile dakeys damaps)))
+
+(defn decile
+  "it still assumes total data >= 10"
+  [danums]
+  (let [total (count danums)
+        data (vec (sort danums))
+        observation-nth (mapv * (range 1 10) (repeat 9 (/ (inc total) 10.0)))
+        calc-decile-nth (fn [th] (+ (data (dec (int th)))
+                                    (* (- th (int th)) (- (data (int th)) (data (dec (int th)))))))]
+    (zipmap [:d1 :d2 :d3 :d4 :d5 :d6 :d7 :d8 :d9]
+            (map calc-decile-nth observation-nth))))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
