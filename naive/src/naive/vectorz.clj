@@ -29,8 +29,12 @@
   "Returns the orthogonal projection of vector a in b. When given three
   arguments, it will return the vector version"
   ([a b]
-     (/ (dot a b) (abs b)))
+     (if-let [res (try (/ (dot a b) (abs b))
+                       (catch Exception e))]
+       res 0))
   ([a b k]
-     (let [abs-b (abs b)
-           abs-x (/ (dot a b) abs-b)]
-       (scalar-times (/ abs-x abs-b) b))))
+     (let [abs-b (abs b)]
+       (if-let [abs-x (try (/ (dot a b) abs-b)
+                           (catch Exception e))]
+         (scalar-times (/ abs-x abs-b) b)
+         [0 0 0]))))

@@ -47,4 +47,10 @@
       (is (= [-2.0 -2.0 -2.0]
              (scalar-times 2 [-1.0 -1.0 -1.0])))
       (is (= [3.5 3.5 3.5]
-             (scalar-times 1/2 [7.0 7.0 7.0]))))))
+             (scalar-times 1/2 [7.0 7.0 7.0]))))
+
+    (testing "projections of vectors"
+      (is (= 0 (project [1 2 3] [0 0 0])))
+      (is (= 10.0 (project [10 3 2] [10 0 0])))
+      (is (= [0 0 0] (project [1 2 3] [0 0 0] :t)))
+      (is (= [10.0 0.0 0.0] (project [10 2 3] [10 0 0] :t))))))
