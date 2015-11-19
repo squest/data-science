@@ -101,7 +101,7 @@
                 vals
                 (map float?)))))
 
-  ;; Testing average deviation
+  ;; Testing variance
     
   (testing "Variance for single and multiple"
     (is (= true (float? (variance (range 100)))))
@@ -111,6 +111,12 @@
     (is (f= (let [std-dev (std-dev (range 100))]
               (* std-dev std-dev))
             (variance (range 100))))
+    (is (f= (->> (range 1 100)
+                 (map #(- % 50))
+                 (map #(* % %))
+                 (reduce +)
+                 (#(/ % 98 1.0)))
+            (variance (range 1 100))))
     (is (== 0 (variance (repeat 100 10))))
     (is (= (repeat 3 0.0)
            (->> (repeat 100 10)
