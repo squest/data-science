@@ -29,4 +29,22 @@
       (is (= (Math/sqrt 120)
              (abs [10 -4 -2])))
       (is (f= (* 10 (Math/sqrt 3))
-              (abs [10 10 10]))))))
+              (abs [10 10 10]))))
+
+    (testing "points to vectors"
+      (is (= [1 2 3]
+             (points->vec [0 0 0] [1 2 3])))
+      (is (= [0 0 0]
+             (points->vec [10 10 10] [10 10 10])))
+      (is (= [6 4 2]
+             (points->vec A B)))
+      (is (= [-10 -10 -10]
+             (points->vec [5 5 5] [-5 -5 -5]))))
+
+    (testing "scalar multiplication of vectors"
+      (is (= [10 10 10]
+             (scalar-times 2 [5 5 5])))
+      (is (= [-2.0 -2.0 -2.0]
+             (scalar-times 2 [-1.0 -1.0 -1.0])))
+      (is (= [3.5 3.5 3.5]
+             (scalar-times 1/2 [7.0 7.0 7.0]))))))
