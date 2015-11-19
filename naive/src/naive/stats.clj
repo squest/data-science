@@ -6,8 +6,10 @@
   of all the keys supplied, the supplied keys (m-keys) must all have
   numeric values"
   ([col]
+     {:pre [(== 2 (count (keep #(% col) [not-empty identity])))]}
      (/ (reduce + col) (float (count col))))
   ([m-keys col]
+     {:pre [(== 2 (count (keep #(% col) [not-empty identity])))]}
      (let [res (map #(select-keys % m-keys) col)
            freq (float (count res))]
        (->> (zipmap m-keys (repeat freq))
@@ -17,11 +19,13 @@
   "Given one argument, returns the variance of the data. Given two
   arguments, return the variance of each key supplied."
   ([col]
+     {:pre [(> (count col) 1)]}
      (let [mean (means col)]
        (->> (map #(let [a (- % mean)] (* a a)) col)
             (reduce +)
             (#(/ % (- (count col) 1) 1.0)))))
   ([m-keys col]
+     {:pre [(> (count col) 1)]}
      (->> (for [k m-keys] (variance (map #(k %) col)))
           (zipmap m-keys))))
 
@@ -30,12 +34,14 @@
   collection. Given two arguments, return the standard deviation for
   every supplied keys"
   ([col]
+     {:pre [(> (count col) 1)]}
      (let [mean (means col)]
        (->> (map #(let [a (- % mean)] (* a a)) col)
             (reduce +)
             (#(/ % (- (count col) 1)))
             (Math/sqrt))))
   ([m-keys col]
+     {:pre [(> (count col) 1)]}
      (->> (for [k m-keys] (std-dev (map #(k %) col)))
           (zipmap m-keys))))
 
@@ -47,6 +53,18 @@
   ([m-keys col]
      (->> (for [k m-keys]
             (frequencies (map k col)))
+          (zipmap m-keys))))
+
+(defn freq-by
+  "The same as freq but the counting is based on the result of calling
+  f to each datum."
+  ([f col]
+     (->> (map f col) frequencies))
+  ([f-map m-keys col]
+     (->> (for [k m-keys]
+            (->> (map #(% k) col)
+                 (map (f-map k) col)
+                 frequencies))
           (zipmap m-keys))))
 
 (defn mode
