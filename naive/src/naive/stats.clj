@@ -57,7 +57,8 @@
 
 (defn freq-by
   "The same as freq but the counting is based on the result of calling
-  f to each datum."
+  f to each datum. Given three arguments, f-map is a map to tell the
+  function which fn to use for each key."
   ([f col]
      (->> (map f col) frequencies))
   ([f-map m-keys col]
