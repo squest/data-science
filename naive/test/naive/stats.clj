@@ -122,7 +122,9 @@
            (->> (repeat 100 10)
                 (map #(zipmap [:a :b :c] (repeat % 3)))
                 (variance [:a :b :c])
-                vals)))))
+                vals))))
+
+)
 
 
 
