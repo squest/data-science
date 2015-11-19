@@ -15,6 +15,11 @@
        (->> (zipmap m-keys (repeat freq))
             (merge-with / (reduce #(merge-with + % %2) res))))))
 
+(defn foo
+  "Some example of multi-arity function"
+  ([a] (* a a))
+  ([a b] (reduce * (repeat b a))))
+
 (defn variance
   "Given one argument, returns the variance of the data. Given two
   arguments, return the variance of each key supplied."
