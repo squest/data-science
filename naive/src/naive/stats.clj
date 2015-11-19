@@ -20,7 +20,7 @@
      (let [mean (means col)]
        (->> (map #(let [a (- % mean)] (* a a)) col)
             (reduce +)
-            (#(/ % (- (count col) 1))))))
+            (#(/ % (- (count col) 1) 1.0)))))
   ([m-keys col]
      (->> (for [k m-keys] (variance (map #(k %) col)))
           (zipmap m-keys))))

@@ -6,7 +6,7 @@
 (defn f=
   "helper function for floating-point equality"
   [x a]
-  (< (- x 1) a (+ x 1)))
+  (< (- x 0.01) a (+ x 0.01)))
 
 (deftest testing-descriptive-stats
   (let [single (for [i (range 1000)] (rand-int 50))
@@ -87,10 +87,11 @@
     (is (= true (float? (std-dev (range 20)))))
     (is (= true (let [sd (std-dev (repeat 100 10))]
                   (f= sd 0))))
-    (is (f= (->> (range 1 51)
+    (is (f= (->> (range 1 100)
+                 (map #(- % 50))
                  (map #(* % %))
                  (reduce +)
-                 (#(/ % 49))
+                 (#(/ % 98))
                  (Math/sqrt))
             (std-dev (range 1 100))))
     (is (= (repeat 5 true)
@@ -102,15 +103,19 @@
 
   ;; Testing average deviation
     
-  (testing "Average deviations for single and multiple"
-    (is (= true (float? (avg-dev (range 100)))))
-    (is (== 25 (avg-dev (range 100))))
-    (is (f= 25 (avg-dev (range 100))))
-    (is (== 0 (avg-dev (repeat 100 10))))
+  (testing "Variance for single and multiple"
+    (is (= true (float? (variance (range 100)))))
+    (is (== (let [std-dev (std-dev (range 100))]
+              (* std-dev std-dev))
+            (variance (range 100))))
+    (is (f= (let [std-dev (std-dev (range 100))]
+              (* std-dev std-dev))
+            (variance (range 100))))
+    (is (== 0 (variance (repeat 100 10))))
     (is (= (repeat 3 0.0)
            (->> (repeat 100 10)
                 (map #(zipmap [:a :b :c] (repeat % 3)))
-                (avg-dev [:a :b :c])
+                (variance [:a :b :c])
                 vals)))))
 
 
