@@ -31,7 +31,7 @@
     (is (= (freq :tinggi datadiri) (freq [172 174 171 171])) "fail di :tinggi")
     (is (= (freq :berat datadiri) (freq [65 75 52 50])) "fail di :berat")
     (is (= (freq :fourclojure datadiri) (freq [88 132 108 98])) "fail di :fourclojure")
-    (is (= (freq :kalogaada datadiri) {:key-not-exist 4}) "fail di :kalogaada")))
+    (is (= (freq :kalogaada datadiri) :key-not-exist) "fail di :kalogaada")))
 
 (deftest testing-modes
   (testing "Testing Numeric Data"
@@ -43,7 +43,7 @@
     (is (= (modes :tinggi datadiri) (modes [172 174 171 171])) "fail di :tinggi")
     (is (= (modes :berat datadiri) (modes [65 75 52 50])) "fail di :berat")
     (is (= (modes :fourclojure datadiri) (modes [88 132 108 98])) "fail di :fourclojure")
-    (is (= (modes :kalogaada datadiri) [:key-not-exist]) "fail di :kalogaada")))
+    (is (= (modes :kalogaada datadiri) :key-not-exist) "fail di :kalogaada")))
 
 (deftest testing-variance
   (testing "Testing Numeric Data"
@@ -76,7 +76,7 @@
     (is (= (freq-by identity :tinggi datadiri) (freq-by identity [172 174 171 171])) "fail di :tinggi")
     (is (= (freq-by identity :berat datadiri) (freq-by identity [65 75 52 50])) "fail di :berat")
     (is (= (freq-by identity :fourclojure datadiri) (freq-by identity [88 132 108 98])) "fail di :fourclojure")
-    (is (= (freq-by identity :kalogaada datadiri) {:key-not-exist 4}) "fail di :kalogaada")))
+    (is (= (freq-by identity :kalogaada datadiri) :key-not-exist) "fail di :kalogaada")))
 
 (deftest testing-quartile
   (testing "Testing Numeric Data"

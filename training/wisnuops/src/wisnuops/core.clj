@@ -14,10 +14,12 @@
            (mapcat #(vector (first %) (count %)) 
                    (partition-by identity (sort coll)))))
   ([key coll] 
-    (apply hash-map 
+    (let [xs (map #(key % :key-not-exist) coll)]
+      (if (= (first xs) :key-not-exist) :key-not-exist
+        (apply hash-map 
            (mapcat #(vector (first %) (count %)) 
                    (partition-by identity 
-                                 (sort (map #(key % :key-not-exist) coll)))))))
+                                 (sort xs))))))))
 
 (defn modes
   ([coll] (let [as (sort (vals (group-by identity coll)))
@@ -25,7 +27,8 @@
             (map first (filter #(= (count %) n) as))))
   ([key coll] (let [as (sort (vals (group-by identity (map #(key % :key-not-exist) coll))))
                 n (count (last as))]
-            (map first (filter #(= (count %) n) as)))))
+                (if (= (first (first as)) :key-not-exist) :key-not-exist
+            (map first (filter #(= (count %) n) as))))))
 
 (defn variance
   ([coll] 
@@ -52,11 +55,13 @@
                (keys xmap)
                (map count (vals xmap))))))
   ([f key coll]
-    (let [xmap (group-by f (map #(key % :key-not-exist) coll))]
-      (apply hash-map
+    (let [xs (map #(key % :key-not-exist) coll)]
+      (if (= (first xs) :key-not-exist) :key-not-exist
+        (let [xmap (group-by f xs)]
+          (apply hash-map
              (interleave
                (keys xmap)
-               (map count (vals xmap)))))))
+               (map count (vals xmap)))))))))
 
 (defn median
   [coll]
