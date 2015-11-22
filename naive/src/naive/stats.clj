@@ -6,26 +6,38 @@
   of all the keys supplied, the supplied keys (m-keys) must all have
   numeric values"
   ([col]
-     {:pre [(== 2 (count (keep #(% col) [not-empty identity])))]}
+     {:pre [(== 2 (count (keep #(% col) [not-empty identity])))
+            (every? number? col)]}
      (/ (reduce + col) (float (count col))))
   ([m-keys col]
-     {:pre [(== 2 (count (keep #(% col) [not-empty identity])))]}
+     {:pre [(== 2 (count (keep #(% col) [not-empty identity])))
+            (->> (mapcat #(map % m-keys) col)
+                 (every? number?))]}
      (let [res (map #(select-keys % m-keys) col)
            freq (float (count res))]
        (->> (zipmap m-keys (repeat freq))
             (merge-with / (reduce #(merge-with + % %2) res))))))
 
+(defn foo
+  "Some example of multi-arity function"
+  ([a]
+     {:pre [(number? a)]}
+     (* a a))
+  ([a b]
+     {:pre [(every? number? [a b])]}
+     (reduce * (repeat b a))))
+
 (defn variance
   "Given one argument, returns the variance of the data. Given two
   arguments, return the variance of each key supplied."
   ([col]
-     {:pre [(> (count col) 1)]}
+     {:pre [(> (count col) 1)
+            (every? number? col)]}
      (let [mean (means col)]
        (->> (map #(let [a (- % mean)] (* a a)) col)
             (reduce +)
             (#(/ % (- (count col) 1) 1.0)))))
   ([m-keys col]
-     {:pre [(> (count col) 1)]}
      (->> (for [k m-keys] (variance (map #(k %) col)))
           (zipmap m-keys))))
 
@@ -34,14 +46,14 @@
   collection. Given two arguments, return the standard deviation for
   every supplied keys"
   ([col]
-     {:pre [(> (count col) 1)]}
+     {:pre [(> (count col) 1)
+            (every? number? col)]}
      (let [mean (means col)]
        (->> (map #(let [a (- % mean)] (* a a)) col)
             (reduce +)
             (#(/ % (- (count col) 1)))
             (Math/sqrt))))
   ([m-keys col]
-     {:pre [(> (count col) 1)]}
      (->> (for [k m-keys] (std-dev (map #(k %) col)))
           (zipmap m-keys))))
 
@@ -83,11 +95,14 @@
   "Returns the n-tile of a data. Given three arguments, it returns the
   vector of n-tile for each of the supplied key."
   ([n col]
+     {:pre [(every? number? col)]}
      (let [ctr (count col)
            nths (map #(* % (quot ctr n)) (range 1 n))
            sorted (sort col)]
        (mapv #(nth sorted %) nths)))
   ([n m-keys col]
+     {:pre [ (->> (mapcat #(map % m-keys) col)
+                  (every? number?))]}
      (let [ctr (count col)
            nths (map #(* % (quot ctr n)) (range 1 n))]
        (->> (for [k m-keys]

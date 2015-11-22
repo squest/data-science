@@ -1,12 +1,8 @@
 (ns naive.test.stats
   (:require
    [naive.stats :refer :all]
-   [clojure.test :refer :all]))
-
-(defn f=
-  "helper function for floating-point equality"
-  [x a]
-  (< (- x 0.01) a (+ x 0.01)))
+   [clojure.test :refer :all]
+   [naive.test.helper :refer :all]))
 
 (deftest testing-descriptive-stats
   (let [single (for [i (range 1000)] (rand-int 50))
@@ -122,9 +118,7 @@
            (->> (repeat 100 10)
                 (map #(zipmap [:a :b :c] (repeat % 3)))
                 (variance [:a :b :c])
-                vals))))
-
-)
+                vals)))))
 
 
 
