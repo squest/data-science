@@ -7,4 +7,6 @@
                  [clojurewerkz/statistiker "0.1.0-SNAPSHOT"]
                  [incanter "1.5.6"]
                  [net.mikera/core.matrix "0.45.0"]
-                 [expresso "0.2.2-SNAPSHOT"]])
+                 [expresso "0.2.2-SNAPSHOT"]
+                 [org.clojure/core.async "0.2.374"]
+                 [com.ashafa/clutch "0.4.0"]])
