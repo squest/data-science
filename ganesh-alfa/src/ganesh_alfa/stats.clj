@@ -61,15 +61,14 @@
 (defn- freq-by-impl-maps-fs
   [fs ks maps]
   (->> (for [k ks]
-         (->> (map #((get fs k) %) maps)
-              (map #(get % k))
+         (->> (map #((get fs k) (get % k)) maps)
               frequencies))
        (zipmap ks)))
 
 (defn- freq-by-impl-maps-f
   [f ks maps]
   (->> (for [k ks]
-         (->> (map #(get % k) maps)
+         (->> (map #(f (get % k)) maps) 
               frequencies))
        (zipmap ks)))
 
