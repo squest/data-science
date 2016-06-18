@@ -14,6 +14,8 @@
 (def data-fb (cslurp "fbfriends"))
 (def data-rec (cslurp "recognitions"))
 (def data-temp (cslurp "temporal"))
+(def data-iq (cslurp "iq"))
+(def z-table-data (cslurp "z-table"))
 
 (defn mean [data]
   (/ (reduce + data)
@@ -57,9 +59,9 @@
 
 (defn z-score
   ([x avg sd]
-    (/ (- x avg) sd))
+   (/ (- x avg) sd))
   ([x data]
-    (z-score x (mean data) (std-dev data))))
+   (z-score x (mean data) (std-dev data))))
 
 (defn majority [data]
   (let [sd (std-dev data)
@@ -68,5 +70,21 @@
         ctr-majority (count (filter #(<= (- avg sd) % (+ avg sd)) data))]
     [ctr ctr-majority (* 100.0 (/ ctr-majority ctr))]))
 
+(defn roll [data]
+  {:mean (mean data)
+   :sd (std-dev data)
+   :variance (variance data)
+   :majority (majority data)})
+
+(defn z-table
+  "Z-table lookup function"
+  [z-score]
+  (cond
+    (< z-score -3) 0.999
+    (> z-score 3) 0.001
+    :else (let [tab z-table-data]
+            (if (pos? z-score)
+              (tab (read-string (format "%.2f" z-score)))
+              (- 1 (tab (read-string (format "%.2f" (Math/abs z-score)))))))))
 
 

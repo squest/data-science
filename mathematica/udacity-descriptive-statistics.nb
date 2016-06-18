@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     18129,        465]
-NotebookOptionsPosition[     17408,        436]
-NotebookOutlinePosition[     17782,        453]
-CellTagsIndexPosition[     17739,        450]
+NotebookDataLength[     14224,        373]
+NotebookOptionsPosition[     13466,        343]
+NotebookOutlinePosition[     13840,        360]
+CellTagsIndexPosition[     13797,        357]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -121,7 +121,7 @@ Cell[BoxData[{
       RowBox[{
        RowBox[{"{", 
         RowBox[{"\"\<Twitter\>\"", ",", "\"\<sabdaps\>\""}], "}"}], ",", 
-       "\"\<FollowerIDs\>\""}], "]"}], ",", "50"}], "]"}]}], 
+       "\"\<FollowerIDs\>\""}], "]"}], ",", "30"}], "]"}]}], 
   ";"}], "\[IndentingNewLine]", 
  RowBox[{"data2a", " ", "=", " ", 
   RowBox[{"SortBy", "[", 
@@ -145,272 +145,174 @@ Cell[BoxData[{
    3.67526023211018*^9}, 3.6752603758580427`*^9, 3.6752604151668463`*^9, {
    3.675260781009736*^9, 3.675260860355041*^9}, {3.675261024625681*^9, 
    3.675261053142426*^9}, {3.6752610866387053`*^9, 3.6752611013633966`*^9}, {
-   3.6752611344407253`*^9, 3.6752611501727*^9}}],
+   3.6752611344407253`*^9, 3.6752611501727*^9}, {3.675261510428355*^9, 
+   3.6752615429369087`*^9}, {3.675261788917315*^9, 3.675261790015293*^9}, {
+   3.675261897743987*^9, 3.675261906490543*^9}, {3.675262077458576*^9, 
+   3.675262106712697*^9}, {3.675262246469181*^9, 3.6752622473309383`*^9}, {
+   3.675262980270179*^9, 3.6752629803833303`*^9}, {3.675263012277925*^9, 
+   3.675263012380457*^9}}],
 
 Cell[BoxData[
  RowBox[{"{", 
   RowBox[{
    RowBox[{"\[LeftAssociation]", 
     RowBox[{
-     RowBox[{"\<\"ScreenName\"\>", "\[Rule]", "\<\"rewardsepadan11\"\>"}], 
+     RowBox[{"\<\"ScreenName\"\>", "\[Rule]", "\<\"agusganden2\"\>"}], ",", 
+     RowBox[{"\<\"FollowersCount\"\>", "\[Rule]", "0"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"ScreenName\"\>", "\[Rule]", "\<\"FightDiamond\"\>"}], ",", 
+     RowBox[{"\<\"FollowersCount\"\>", "\[Rule]", "10"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"ScreenName\"\>", "\[Rule]", "\<\"iqbal_rom\"\>"}], ",", 
+     RowBox[{"\<\"FollowersCount\"\>", "\[Rule]", "10"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"ScreenName\"\>", "\[Rule]", "\<\"nafi_hafidzah\"\>"}], ",", 
+     
+     RowBox[{"\<\"FollowersCount\"\>", "\[Rule]", "21"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"ScreenName\"\>", "\[Rule]", "\<\"ZLAIqo\"\>"}], ",", 
+     RowBox[{"\<\"FollowersCount\"\>", "\[Rule]", "44"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"ScreenName\"\>", "\[Rule]", "\<\"albaihaqi_s\"\>"}], ",", 
+     RowBox[{"\<\"FollowersCount\"\>", "\[Rule]", "84"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"ScreenName\"\>", "\[Rule]", "\<\"ometzidiomas\"\>"}], ",", 
+     RowBox[{"\<\"FollowersCount\"\>", "\[Rule]", "100"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"ScreenName\"\>", "\[Rule]", "\<\"hanindya_na\"\>"}], ",", 
+     RowBox[{"\<\"FollowersCount\"\>", "\[Rule]", "114"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"ScreenName\"\>", "\[Rule]", "\<\"Anggun_kajiwara\"\>"}], 
      ",", 
-     RowBox[{"\<\"FollowersCount\"\>", "\[Rule]", "1"}]}], 
+     RowBox[{"\<\"FollowersCount\"\>", "\[Rule]", "119"}]}], 
     "\[RightAssociation]"}], ",", 
    RowBox[{"\[LeftAssociation]", 
     RowBox[{
-     RowBox[{"\<\"ScreenName\"\>", "\[Rule]", "\<\"vanjeckie\"\>"}], ",", 
-     RowBox[{"\<\"FollowersCount\"\>", "\[Rule]", "1"}]}], 
+     RowBox[{"\<\"ScreenName\"\>", "\[Rule]", "\<\"cicipuja1\"\>"}], ",", 
+     RowBox[{"\<\"FollowersCount\"\>", "\[Rule]", "124"}]}], 
     "\[RightAssociation]"}], ",", 
    RowBox[{"\[LeftAssociation]", 
     RowBox[{
-     RowBox[{"\<\"ScreenName\"\>", "\[Rule]", "\<\"tsammraa\"\>"}], ",", 
-     RowBox[{"\<\"FollowersCount\"\>", "\[Rule]", "5"}]}], 
-    "\[RightAssociation]"}], ",", 
-   RowBox[{"\[LeftAssociation]", 
-    RowBox[{
-     RowBox[{"\<\"ScreenName\"\>", "\[Rule]", "\<\"AfifahAmirotul\"\>"}], ",", 
-     RowBox[{"\<\"FollowersCount\"\>", "\[Rule]", "20"}]}], 
-    "\[RightAssociation]"}], ",", 
-   RowBox[{"\[LeftAssociation]", 
-    RowBox[{
-     RowBox[{"\<\"ScreenName\"\>", "\[Rule]", "\<\"Thoriksyah_P\"\>"}], ",", 
-     RowBox[{"\<\"FollowersCount\"\>", "\[Rule]", "27"}]}], 
-    "\[RightAssociation]"}], ",", 
-   RowBox[{"\[LeftAssociation]", 
-    RowBox[{
-     RowBox[{"\<\"ScreenName\"\>", "\[Rule]", "\<\"syeikhanugrah\"\>"}], ",", 
-     
-     RowBox[{"\<\"FollowersCount\"\>", "\[Rule]", "28"}]}], 
-    "\[RightAssociation]"}], ",", 
-   RowBox[{"\[LeftAssociation]", 
-    RowBox[{
-     RowBox[{"\<\"ScreenName\"\>", "\[Rule]", "\<\"Nyne400\"\>"}], ",", 
-     RowBox[{"\<\"FollowersCount\"\>", "\[Rule]", "42"}]}], 
-    "\[RightAssociation]"}], ",", 
-   RowBox[{"\[LeftAssociation]", 
-    RowBox[{
-     RowBox[{"\<\"ScreenName\"\>", "\[Rule]", "\<\"tiwiwel\"\>"}], ",", 
-     RowBox[{"\<\"FollowersCount\"\>", "\[Rule]", "42"}]}], 
-    "\[RightAssociation]"}], ",", 
-   RowBox[{"\[LeftAssociation]", 
-    RowBox[{
-     RowBox[{"\<\"ScreenName\"\>", "\[Rule]", "\<\"aulton149\"\>"}], ",", 
-     RowBox[{"\<\"FollowersCount\"\>", "\[Rule]", "43"}]}], 
-    "\[RightAssociation]"}], ",", 
-   RowBox[{"\[LeftAssociation]", 
-    RowBox[{
-     RowBox[{"\<\"ScreenName\"\>", "\[Rule]", "\<\"anggawahy_4ever\"\>"}], 
+     RowBox[{"\<\"ScreenName\"\>", "\[Rule]", "\<\"FransisLorencia\"\>"}], 
      ",", 
-     RowBox[{"\<\"FollowersCount\"\>", "\[Rule]", "55"}]}], 
+     RowBox[{"\<\"FollowersCount\"\>", "\[Rule]", "139"}]}], 
     "\[RightAssociation]"}], ",", 
    RowBox[{"\[LeftAssociation]", 
     RowBox[{
-     RowBox[{"\<\"ScreenName\"\>", "\[Rule]", "\<\"brebezz\"\>"}], ",", 
-     RowBox[{"\<\"FollowersCount\"\>", "\[Rule]", "64"}]}], 
+     RowBox[{"\<\"ScreenName\"\>", "\[Rule]", "\<\"purwarahayu_\"\>"}], ",", 
+     RowBox[{"\<\"FollowersCount\"\>", "\[Rule]", "143"}]}], 
     "\[RightAssociation]"}], ",", 
    RowBox[{"\[LeftAssociation]", 
     RowBox[{
-     RowBox[{"\<\"ScreenName\"\>", "\[Rule]", "\<\"edisetyawann\"\>"}], ",", 
-     RowBox[{"\<\"FollowersCount\"\>", "\[Rule]", "75"}]}], 
+     RowBox[{"\<\"ScreenName\"\>", "\[Rule]", "\<\"qurota3\"\>"}], ",", 
+     RowBox[{"\<\"FollowersCount\"\>", "\[Rule]", "169"}]}], 
     "\[RightAssociation]"}], ",", 
    RowBox[{"\[LeftAssociation]", 
     RowBox[{
-     RowBox[{"\<\"ScreenName\"\>", "\[Rule]", "\<\"restifauziah_\"\>"}], ",", 
+     RowBox[{"\<\"ScreenName\"\>", "\[Rule]", "\<\"madaumaro\"\>"}], ",", 
+     RowBox[{"\<\"FollowersCount\"\>", "\[Rule]", "202"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"ScreenName\"\>", "\[Rule]", "\<\"annsatlulu\"\>"}], ",", 
+     RowBox[{"\<\"FollowersCount\"\>", "\[Rule]", "211"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"ScreenName\"\>", "\[Rule]", "\<\"RifdaNA_\"\>"}], ",", 
+     RowBox[{"\<\"FollowersCount\"\>", "\[Rule]", "260"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"ScreenName\"\>", "\[Rule]", "\<\"nurul_fatimaaa\"\>"}], ",", 
+     RowBox[{"\<\"FollowersCount\"\>", "\[Rule]", "293"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"ScreenName\"\>", "\[Rule]", "\<\"ilhamwjyaa\"\>"}], ",", 
+     RowBox[{"\<\"FollowersCount\"\>", "\[Rule]", "308"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"ScreenName\"\>", "\[Rule]", "\<\"AyuNawangsih\"\>"}], ",", 
+     RowBox[{"\<\"FollowersCount\"\>", "\[Rule]", "367"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"ScreenName\"\>", "\[Rule]", "\<\"Arnanda_44\"\>"}], ",", 
+     RowBox[{"\<\"FollowersCount\"\>", "\[Rule]", "431"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"ScreenName\"\>", "\[Rule]", "\<\"intan_pratiwi27\"\>"}], 
+     ",", 
+     RowBox[{"\<\"FollowersCount\"\>", "\[Rule]", "444"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"ScreenName\"\>", "\[Rule]", "\<\"tijargigifari\"\>"}], ",", 
      
-     RowBox[{"\<\"FollowersCount\"\>", "\[Rule]", "77"}]}], 
+     RowBox[{"\<\"FollowersCount\"\>", "\[Rule]", "488"}]}], 
     "\[RightAssociation]"}], ",", 
    RowBox[{"\[LeftAssociation]", 
     RowBox[{
-     RowBox[{"\<\"ScreenName\"\>", "\[Rule]", "\<\"AndreFebriantz\"\>"}], ",", 
-     RowBox[{"\<\"FollowersCount\"\>", "\[Rule]", "109"}]}], 
-    "\[RightAssociation]"}], ",", 
-   RowBox[{"\[LeftAssociation]", 
-    RowBox[{
-     RowBox[{"\<\"ScreenName\"\>", "\[Rule]", "\<\"AmienGf\"\>"}], ",", 
-     RowBox[{"\<\"FollowersCount\"\>", "\[Rule]", "131"}]}], 
-    "\[RightAssociation]"}], ",", 
-   RowBox[{"\[LeftAssociation]", 
-    RowBox[{
-     RowBox[{"\<\"ScreenName\"\>", "\[Rule]", "\<\"amir_4ll\"\>"}], ",", 
-     RowBox[{"\<\"FollowersCount\"\>", "\[Rule]", "137"}]}], 
-    "\[RightAssociation]"}], ",", 
-   RowBox[{"\[LeftAssociation]", 
-    RowBox[{
-     RowBox[{"\<\"ScreenName\"\>", "\[Rule]", "\<\"quraishshihab1\"\>"}], ",", 
-     RowBox[{"\<\"FollowersCount\"\>", "\[Rule]", "146"}]}], 
-    "\[RightAssociation]"}], ",", 
-   RowBox[{"\[LeftAssociation]", 
-    RowBox[{
-     RowBox[{"\<\"ScreenName\"\>", "\[Rule]", "\<\"m_ayp\"\>"}], ",", 
-     RowBox[{"\<\"FollowersCount\"\>", "\[Rule]", "173"}]}], 
-    "\[RightAssociation]"}], ",", 
-   RowBox[{"\[LeftAssociation]", 
-    RowBox[{
-     RowBox[{"\<\"ScreenName\"\>", "\[Rule]", "\<\"_AhmadFaisal_\"\>"}], ",", 
+     RowBox[{"\<\"ScreenName\"\>", "\[Rule]", "\<\"yasrilkuncoro\"\>"}], ",", 
      
-     RowBox[{"\<\"FollowersCount\"\>", "\[Rule]", "205"}]}], 
+     RowBox[{"\<\"FollowersCount\"\>", "\[Rule]", "488"}]}], 
     "\[RightAssociation]"}], ",", 
    RowBox[{"\[LeftAssociation]", 
     RowBox[{
-     RowBox[{"\<\"ScreenName\"\>", "\[Rule]", "\<\"MuhRizkyRmt\"\>"}], ",", 
-     RowBox[{"\<\"FollowersCount\"\>", "\[Rule]", "212"}]}], 
+     RowBox[{"\<\"ScreenName\"\>", "\[Rule]", "\<\"tryshaaris\"\>"}], ",", 
+     RowBox[{"\<\"FollowersCount\"\>", "\[Rule]", "515"}]}], 
     "\[RightAssociation]"}], ",", 
    RowBox[{"\[LeftAssociation]", 
     RowBox[{
-     RowBox[{"\<\"ScreenName\"\>", "\[Rule]", "\<\"fadillah_m9\"\>"}], ",", 
-     RowBox[{"\<\"FollowersCount\"\>", "\[Rule]", "217"}]}], 
+     RowBox[{"\<\"ScreenName\"\>", "\[Rule]", "\<\"amiralrasyid\"\>"}], ",", 
+     RowBox[{"\<\"FollowersCount\"\>", "\[Rule]", "529"}]}], 
     "\[RightAssociation]"}], ",", 
    RowBox[{"\[LeftAssociation]", 
     RowBox[{
-     RowBox[{"\<\"ScreenName\"\>", "\[Rule]", "\<\"preettha\"\>"}], ",", 
-     RowBox[{"\<\"FollowersCount\"\>", "\[Rule]", "272"}]}], 
+     RowBox[{"\<\"ScreenName\"\>", "\[Rule]", "\<\"chrlgrnprtm\"\>"}], ",", 
+     RowBox[{"\<\"FollowersCount\"\>", "\[Rule]", "620"}]}], 
     "\[RightAssociation]"}], ",", 
    RowBox[{"\[LeftAssociation]", 
     RowBox[{
-     RowBox[{"\<\"ScreenName\"\>", "\[Rule]", "\<\"amien_uzumaki\"\>"}], ",", 
-     
-     RowBox[{"\<\"FollowersCount\"\>", "\[Rule]", "283"}]}], 
+     RowBox[{"\<\"ScreenName\"\>", "\[Rule]", "\<\"RehanHwr\"\>"}], ",", 
+     RowBox[{"\<\"FollowersCount\"\>", "\[Rule]", "626"}]}], 
     "\[RightAssociation]"}], ",", 
    RowBox[{"\[LeftAssociation]", 
     RowBox[{
-     RowBox[{"\<\"ScreenName\"\>", "\[Rule]", "\<\"cemmyMutz\"\>"}], ",", 
-     RowBox[{"\<\"FollowersCount\"\>", "\[Rule]", "305"}]}], 
+     RowBox[{"\<\"ScreenName\"\>", "\[Rule]", "\<\"fajarasadd\"\>"}], ",", 
+     RowBox[{"\<\"FollowersCount\"\>", "\[Rule]", "645"}]}], 
     "\[RightAssociation]"}], ",", 
    RowBox[{"\[LeftAssociation]", 
     RowBox[{
-     RowBox[{"\<\"ScreenName\"\>", "\[Rule]", "\<\"alikacifzp\"\>"}], ",", 
-     RowBox[{"\<\"FollowersCount\"\>", "\[Rule]", "306"}]}], 
+     RowBox[{"\<\"ScreenName\"\>", "\[Rule]", "\<\"indriindri10\"\>"}], ",", 
+     RowBox[{"\<\"FollowersCount\"\>", "\[Rule]", "875"}]}], 
     "\[RightAssociation]"}], ",", 
    RowBox[{"\[LeftAssociation]", 
     RowBox[{
-     RowBox[{"\<\"ScreenName\"\>", "\[Rule]", "\<\"RaihanPuteraP\"\>"}], ",", 
-     
-     RowBox[{"\<\"FollowersCount\"\>", "\[Rule]", "307"}]}], 
-    "\[RightAssociation]"}], ",", 
-   RowBox[{"\[LeftAssociation]", 
-    RowBox[{
-     RowBox[{"\<\"ScreenName\"\>", "\[Rule]", "\<\"giriaminulloh\"\>"}], ",", 
-     
-     RowBox[{"\<\"FollowersCount\"\>", "\[Rule]", "320"}]}], 
-    "\[RightAssociation]"}], ",", 
-   RowBox[{"\[LeftAssociation]", 
-    RowBox[{
-     RowBox[{"\<\"ScreenName\"\>", "\[Rule]", "\<\"ririrazak\"\>"}], ",", 
-     RowBox[{"\<\"FollowersCount\"\>", "\[Rule]", "334"}]}], 
-    "\[RightAssociation]"}], ",", 
-   RowBox[{"\[LeftAssociation]", 
-    RowBox[{
-     RowBox[{"\<\"ScreenName\"\>", "\[Rule]", "\<\"baypurwoko\"\>"}], ",", 
-     RowBox[{"\<\"FollowersCount\"\>", "\[Rule]", "353"}]}], 
-    "\[RightAssociation]"}], ",", 
-   RowBox[{"\[LeftAssociation]", 
-    RowBox[{
-     RowBox[{"\<\"ScreenName\"\>", "\[Rule]", "\<\"deryrizkip\"\>"}], ",", 
-     RowBox[{"\<\"FollowersCount\"\>", "\[Rule]", "357"}]}], 
-    "\[RightAssociation]"}], ",", 
-   RowBox[{"\[LeftAssociation]", 
-    RowBox[{
-     RowBox[{"\<\"ScreenName\"\>", "\[Rule]", "\<\"ynk35\"\>"}], ",", 
-     RowBox[{"\<\"FollowersCount\"\>", "\[Rule]", "371"}]}], 
-    "\[RightAssociation]"}], ",", 
-   RowBox[{"\[LeftAssociation]", 
-    RowBox[{
-     RowBox[{"\<\"ScreenName\"\>", "\[Rule]", "\<\"albertyosua_\"\>"}], ",", 
-     RowBox[{"\<\"FollowersCount\"\>", "\[Rule]", "373"}]}], 
-    "\[RightAssociation]"}], ",", 
-   RowBox[{"\[LeftAssociation]", 
-    RowBox[{
-     RowBox[{"\<\"ScreenName\"\>", "\[Rule]", "\<\"regincs\"\>"}], ",", 
-     RowBox[{"\<\"FollowersCount\"\>", "\[Rule]", "373"}]}], 
-    "\[RightAssociation]"}], ",", 
-   RowBox[{"\[LeftAssociation]", 
-    RowBox[{
-     RowBox[{"\<\"ScreenName\"\>", "\[Rule]", "\<\"harris_pasya\"\>"}], ",", 
-     RowBox[{"\<\"FollowersCount\"\>", "\[Rule]", "408"}]}], 
-    "\[RightAssociation]"}], ",", 
-   RowBox[{"\[LeftAssociation]", 
-    RowBox[{
-     RowBox[{"\<\"ScreenName\"\>", "\[Rule]", "\<\"IfandiEvan\"\>"}], ",", 
-     RowBox[{"\<\"FollowersCount\"\>", "\[Rule]", "443"}]}], 
-    "\[RightAssociation]"}], ",", 
-   RowBox[{"\[LeftAssociation]", 
-    RowBox[{
-     RowBox[{"\<\"ScreenName\"\>", "\[Rule]", "\<\"HarritsRizqi\"\>"}], ",", 
-     RowBox[{"\<\"FollowersCount\"\>", "\[Rule]", "462"}]}], 
-    "\[RightAssociation]"}], ",", 
-   RowBox[{"\[LeftAssociation]", 
-    RowBox[{
-     RowBox[{"\<\"ScreenName\"\>", "\[Rule]", "\<\"laodeimam\"\>"}], ",", 
-     RowBox[{"\<\"FollowersCount\"\>", "\[Rule]", "499"}]}], 
-    "\[RightAssociation]"}], ",", 
-   RowBox[{"\[LeftAssociation]", 
-    RowBox[{
-     RowBox[{"\<\"ScreenName\"\>", "\[Rule]", "\<\"diahayul12\"\>"}], ",", 
-     RowBox[{"\<\"FollowersCount\"\>", "\[Rule]", "538"}]}], 
-    "\[RightAssociation]"}], ",", 
-   RowBox[{"\[LeftAssociation]", 
-    RowBox[{
-     RowBox[{"\<\"ScreenName\"\>", "\[Rule]", "\<\"AuliaAnnisya\"\>"}], ",", 
-     RowBox[{"\<\"FollowersCount\"\>", "\[Rule]", "554"}]}], 
-    "\[RightAssociation]"}], ",", 
-   RowBox[{"\[LeftAssociation]", 
-    RowBox[{
-     RowBox[{"\<\"ScreenName\"\>", "\[Rule]", "\<\"novia_sw\"\>"}], ",", 
-     RowBox[{"\<\"FollowersCount\"\>", "\[Rule]", "565"}]}], 
-    "\[RightAssociation]"}], ",", 
-   RowBox[{"\[LeftAssociation]", 
-    RowBox[{
-     RowBox[{"\<\"ScreenName\"\>", "\[Rule]", "\<\"ganbagus\"\>"}], ",", 
-     RowBox[{"\<\"FollowersCount\"\>", "\[Rule]", "634"}]}], 
-    "\[RightAssociation]"}], ",", 
-   RowBox[{"\[LeftAssociation]", 
-    RowBox[{
-     RowBox[{"\<\"ScreenName\"\>", "\[Rule]", "\<\"diaanLT\"\>"}], ",", 
-     RowBox[{"\<\"FollowersCount\"\>", "\[Rule]", "644"}]}], 
-    "\[RightAssociation]"}], ",", 
-   RowBox[{"\[LeftAssociation]", 
-    RowBox[{
-     RowBox[{"\<\"ScreenName\"\>", "\[Rule]", "\<\"wildyunita\"\>"}], ",", 
-     RowBox[{"\<\"FollowersCount\"\>", "\[Rule]", "730"}]}], 
-    "\[RightAssociation]"}], ",", 
-   RowBox[{"\[LeftAssociation]", 
-    RowBox[{
-     RowBox[{"\<\"ScreenName\"\>", "\[Rule]", "\<\"nailabdr\"\>"}], ",", 
-     RowBox[{"\<\"FollowersCount\"\>", "\[Rule]", "754"}]}], 
-    "\[RightAssociation]"}], ",", 
-   RowBox[{"\[LeftAssociation]", 
-    RowBox[{
-     RowBox[{"\<\"ScreenName\"\>", "\[Rule]", "\<\"ditaaabox\"\>"}], ",", 
-     RowBox[{"\<\"FollowersCount\"\>", "\[Rule]", "847"}]}], 
-    "\[RightAssociation]"}], ",", 
-   RowBox[{"\[LeftAssociation]", 
-    RowBox[{
-     RowBox[{"\<\"ScreenName\"\>", "\[Rule]", "\<\"Nisrinina17\"\>"}], ",", 
-     RowBox[{"\<\"FollowersCount\"\>", "\[Rule]", "889"}]}], 
-    "\[RightAssociation]"}], ",", 
-   RowBox[{"\[LeftAssociation]", 
-    RowBox[{
-     RowBox[{"\<\"ScreenName\"\>", "\[Rule]", "\<\"evajumasnia\"\>"}], ",", 
-     RowBox[{"\<\"FollowersCount\"\>", "\[Rule]", "1086"}]}], 
-    "\[RightAssociation]"}], ",", 
-   RowBox[{"\[LeftAssociation]", 
-    RowBox[{
-     RowBox[{"\<\"ScreenName\"\>", "\[Rule]", "\<\"IfanAndriP\"\>"}], ",", 
-     RowBox[{"\<\"FollowersCount\"\>", "\[Rule]", "1457"}]}], 
-    "\[RightAssociation]"}], ",", 
-   RowBox[{"\[LeftAssociation]", 
-    RowBox[{
-     RowBox[{"\<\"ScreenName\"\>", "\[Rule]", "\<\"fiqayam\"\>"}], ",", 
-     RowBox[{"\<\"FollowersCount\"\>", "\[Rule]", "1712"}]}], 
-    "\[RightAssociation]"}], ",", 
-   RowBox[{"\[LeftAssociation]", 
-    RowBox[{
-     RowBox[{"\<\"ScreenName\"\>", "\[Rule]", "\<\"ishaalim13\"\>"}], ",", 
-     RowBox[{"\<\"FollowersCount\"\>", "\[Rule]", "9423"}]}], 
+     RowBox[{"\<\"ScreenName\"\>", "\[Rule]", "\<\"Rurunavia\"\>"}], ",", 
+     RowBox[{"\<\"FollowersCount\"\>", "\[Rule]", "1239"}]}], 
     "\[RightAssociation]"}]}], "}"}]], "Output",
- CellChangeTimes->{3.675260513326331*^9, 3.675260544043221*^9, 
-  3.675260826576084*^9, 3.675260873829356*^9, 3.6752610679904957`*^9, 
-  3.675261203866283*^9}]
+ CellChangeTimes->{3.675262170560463*^9, 3.675262311014451*^9, 
+  3.6752629944224157`*^9, 3.675263044802309*^9}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -423,16 +325,21 @@ Cell[BoxData[{
      RowBox[{"{", 
       RowBox[{"\"\<Twitter\>\"", ",", "2240657118"}], "}"}], ",", 
      "\"\<UserData\>\""}], "]"}], "]"}], ";"}], "\[IndentingNewLine]", 
- RowBox[{"findFollowers", "[", "2240657118", "]"}]}], "Input",
+ RowBox[{
+  RowBox[{"findFollowers", "[", "2240657118", "]"}], ";"}]}], "Input",
  CellChangeTimes->{{3.675260236887643*^9, 3.675260353099649*^9}, {
-  3.6752604565833817`*^9, 3.675260465793359*^9}, {3.675260608833221*^9, 
-  3.675260689093429*^9}, {3.6752607350555353`*^9, 3.675260754333692*^9}}],
+   3.6752604565833817`*^9, 3.675260465793359*^9}, {3.675260608833221*^9, 
+   3.675260689093429*^9}, {3.6752607350555353`*^9, 3.675260754333692*^9}, 
+   3.675262991465043*^9}],
 
 Cell[BoxData["130"], "Output",
  CellChangeTimes->{{3.675260253398828*^9, 3.6752602649626703`*^9}, 
    3.67526032124076*^9, 3.67526035731078*^9, {3.675260622916048*^9, 
    3.675260691347189*^9}, {3.675260738641747*^9, 3.6752607577081623`*^9}}]
-}, Open  ]]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.675262996489725*^9, 3.675263005383271*^9}}]
 },
 WindowSize->{Full, Full},
 WindowMargins->{{4, Automatic}, {Automatic, 4}},
@@ -460,13 +367,14 @@ Cell[1754, 58, 319, 9, 36, "Input"],
 Cell[2076, 69, 631, 14, 57, "Input"],
 Cell[2710, 85, 218, 4, 36, "Input"],
 Cell[CellGroupData[{
-Cell[2953, 93, 2359, 54, 120, "Input"],
-Cell[5315, 149, 11256, 263, 574, "Output"]
+Cell[2953, 93, 2707, 59, 120, "Input"],
+Cell[5663, 154, 6825, 160, 364, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[16608, 417, 539, 11, 57, "Input"],
-Cell[17150, 430, 242, 3, 35, "Output"]
-}, Open  ]]
+Cell[12525, 319, 585, 13, 57, "Input"],
+Cell[13113, 334, 242, 3, 35, "Output"]
+}, Open  ]],
+Cell[13370, 340, 92, 1, 35, "Input"]
 }
 ]
 *)
